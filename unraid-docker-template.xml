@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="1">
+  <Name>auto-archiver</Name>
+  <Repository>dripx/auto-archiver</Repository>
+  <Registry>https://hub.docker.com/r/dripx/auto-archiver/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/</Support>
+  <Project/>
+  <Overview>Automatic YouTube and Twitch archiving container&#xD;
+&#xD;
+Utilizes youtube-dl to download videos.</Overview>
+  <Category>Network:Management Tools:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <DateInstalled>1527398179</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <DonateImg/>
+  <MinVer/>
+  <Description>Automatic YouTube and Twitch archiving container&#xD;
+    &#xD;
+    Utilizes youtube-dl to download videos.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port/>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+        <HostDir>/mnt/user/appdata/auto-archiver</HostDir>
+        <ContainerDir>/config</ContainerDir>
+        <Mode>rw</Mode>
+  <Environment/>
+  <Labels/>
+  <Config Name="auto-archiver" Target="/config" Default="/mnt/user/appdata/auto-archiver/" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/auto-archiver/</Config>
+</Container>

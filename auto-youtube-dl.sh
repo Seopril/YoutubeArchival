@@ -1,0 +1,1 @@
+youtube-dl -v -i --download-archive /config/archive.txt -o '%(channel)s/%(playlist_title)s - %(title)s.%(ext)s' --limit-rate 4M --write-description --write-info-json --write-annotations --write-all-thumbnails --no-call-home  -f 'bestvideo+bestaudio' --write-sub --audio-quality 0 --embed-subs --embed-thumbnail --add-metadata --batch-file /config/source.txt
