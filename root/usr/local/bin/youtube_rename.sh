@@ -1,12 +1,20 @@
 #!/bin/bash
 
-if [[ $(jq [.playlist]) -ne "NA" ]]; then
-    playlist=$(jq [.playlist])
-    for file in $(ls ./); do
-        mv $file "$playlist - $file"
-    done
-    dir=$(dirname $1)
-    mv $dir "$playlist - $dir"
+if [[ "${1##*.}" == "json" ]]; then
+    jq -e '(.playlist != null)' $1 >/dev/null
+    if [[ $? -eq 0 ]]; then
+        dir=$(realpath $1 | xargs dirname)
+        dirname=$(realpath $1 | xargs dirname | xargs basename)
+
+        playlist=$(jq '(.playlist)' $1)
+        for file in $(ls $dir); do
+            mv $file "$playlist - $file"
+        done
+        
+        mkdir "$dir/../$playlist - $dirname"
+        cp -r $dir/* "$dir/../$playlist - $dirname"
+        rm -rf $dir
+    fi
 fi
 
 exit 0

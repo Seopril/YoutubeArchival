@@ -1,1 +1,1 @@
-youtube-dl --batch-file /config/source.txt --exec 'find {} -name "*.json" -exec /usr/local/bin/youtube_rename.sh {} \;'
+youtube-dl --batch-file /config/source.txt --config-location /config/youtube-dl.conf --exec 'find {} -name "*.json" -exec /usr/local/bin/youtube_rename.sh {} \;'

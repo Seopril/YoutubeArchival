@@ -1,1 +1,1 @@
-0 2 * * * /usr/local/bin/auto-archiver.sh >> /var/log/cron.log 2>&1
+0 * * * * /usr/local/bin/auto-archiver.sh >> /var/log/cron.log 2>&1
